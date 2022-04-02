@@ -8,8 +8,8 @@
     - [1.1 使用 winget 安装](#11-使用-winget-安装)
     - [1.2 官方下载安装](#12-官方下载安装)
   - [2.Linux环境](#2linux环境)
-    - [2.1 安装软件](#21-安装软件)
-    - [2.2 官方下载安装](#22-官方下载安装)
+    - [2.1 官方下载安装](#21-官方下载安装)
+    - [2.2 指令直接安装](#22-指令直接安装)
   - [3.安装驱动](#3安装驱动)
     - [3.1 Windows虚拟机](#31-windows虚拟机)
     - [3.2 Linux虚拟机](#32-linux虚拟机)
@@ -54,7 +54,7 @@ Downloading https://download3.vmware.com/software/wkst/file/VMware-workstation-f
 
 ## 2.Linux环境
 
-### 2.1 安装软件
+### 2.1 官方下载安装
 
 官方下载网址：
 
@@ -63,6 +63,10 @@ Downloading https://download3.vmware.com/software/wkst/file/VMware-workstation-f
 下载文件名称：
 
 - VMware-Workstation-Full-16.2.3-19376536.x86_64.bundle
+
+
+
+### 2.2 指令直接安装
 
 ```bash
 sudo apt install build-essential
@@ -99,12 +103,6 @@ Installation was successful.
 liu@liu-virtual-machine:~/下载$ 
 
 ```
-
-### 2.2 官方下载安装
-
-官方下载网址：
-
-- [VMware Workstation Pro Download](https://www.vmware.com/jp/products/workstation-pro/workstation-pro-evaluation.html)
 
 
 ## 3.安装驱动
