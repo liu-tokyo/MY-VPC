@@ -48,7 +48,7 @@ Downloading https://download3.vmware.com/software/wkst/file/VMware-workstation-f
 
 官方下载网址：
 
-- [VMware Workstation Pro Download
+- [VMware Workstation Pro Download](https://www.vmware.com/jp/products/workstation-pro/workstation-pro-evaluation.html)
 
 
 
@@ -104,7 +104,7 @@ liu@liu-virtual-machine:~/下载$
 
 官方下载网址：
 
-- [VMware Workstation Pro Download
+- [VMware Workstation Pro Download](https://www.vmware.com/jp/products/workstation-pro/workstation-pro-evaluation.html)
 
 
 ## 3.安装驱动
@@ -124,6 +124,10 @@ VMware菜单 【**虚拟机**】 -【 **VMware tools安装**】
 ```bash
 sudo apt-get install open-vm-tools-desktop .
 ```
+
+
+
+
 
 参照如下网站进行安装
 
