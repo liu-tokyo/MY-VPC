@@ -189,19 +189,19 @@ libvirt支持的网络配置：
 标准安装libvirt之后,默认的虚拟网络（default virtual network）采用的是NAT，可以通过virsh net-list --all 查看：
 
 ```shell
-virsh net-list --all
+sudo virsh net-list --all
 ```
 
 加入默认的虚拟网络丢失之后，可以采用下面的方法重新加载和激活：
 
 ```shell
-virsh net-define /usr/share/libvirt/networks/default.xml
+sudo virsh net-define /usr/share/libvirt/networks/default.xml
 ```
 
 标记默认网络自动启动：
 
 ```shell
-virsh net-autostart default
+sudo virsh net-autostart default
 ```
 
 启动默认网络：
@@ -225,3 +225,7 @@ unix/linux一直沿用至今的“一切皆文件”的开发设计理念，为�
 .............
 ............
 下面将会看到使用bridge时，该字段的变化。－－－－：说明，可以在<interface>域内加入<mac address='xx:xx:...' />以便定义起mac地址，当然这不是必要的。
+
+## 参照
+
+- [KVM をインストールして設定する - Qiita](https://qiita.com/tkarube/items/7e02d1f9e93d107c616b)
