@@ -119,6 +119,14 @@ kvm                   921600  1 kvm_intel
 irqbypass              16384  1 kvm
 ```
 
+如上安装之后，需要重新启动一下电脑，这样后续安装虚拟机的时候，不至于出现问题。
+
+检查 libvirtd 是否处于活动状态以及 QEMU 上是否启用了硬件虚拟化：
+
+```shell
+sudo systemctl is-active libvirtd
+```
+
 
 
 ## 3. 在 Ubuntu 上创建虚拟机
@@ -157,3 +165,60 @@ virt manager
 ```
 
 虚拟机管理器窗口如图所示弹出。
+
+
+
+## 4. 激活 default 虚拟网络
+
+安装结束，再次启动之后，启动虚拟机的时候，出现虚拟网络问题。
+
+libvirt支持的网络配置：
+
+
+1. 虚拟网络使用NAT
+2. 直接分配物理pci设备或者SR-IOV(single root I/O virtualization)供虚拟网络使用
+3. 桥接网络
+
+在Host电脑，把该问题进行处理之后，虚拟机可以正确启动。
+
+### 4.1 主机配置 
+
+标准安装libvirt之后,默认的虚拟网络（default virtual network）采用的是NAT，可以通过virsh net-list --all 查看：
+
+```shell
+virsh net-list --all
+```
+
+加入默认的虚拟网络丢失之后，可以采用下面的方法重新加载和激活：
+
+```shell
+virsh net-define /usr/share/libvirt/networks/default.xml
+```
+
+标记默认网络自动启动：
+
+```shell
+virsh net-autostart default
+```
+
+启动默认网络：
+
+```shell
+sudo virsh net-start default
+```
+
+libvirt 将会增加iptables规则以便保证虚拟机可以正常使用网络，记得检查 /etc/sysctf.conf中的net.ipv4.ip_forwart是否开启。
+
+### 4.2 客户端配置
+
+unix/linux一直沿用至今的“一切皆文件”的开发设计理念，为我们在配置的各种参数和性能时，提供了非常多的方便。这里将会说明如何查看和调整客户端的网络配置：
+＃cd /etc/libvirt/qemu/
+\#vim centos.xml (centos.xml是我安装的虚拟机<－－>客户端)
+...........
+...........
+<interface>
+      <source network='default'/>
+</interface>
+.............
+............
+下面将会看到使用bridge时，该字段的变化。－－－－：说明，可以在<interface>域内加入<mac address='xx:xx:...' />以便定义起mac地址，当然这不是必要的。
