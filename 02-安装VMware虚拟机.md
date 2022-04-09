@@ -153,7 +153,7 @@ sudo apt-get install open-vm-tools-desktop .
 
 官方网站说明：
 
-- [open-vm-tools install (vmware.com)](https://docs.vmware.com/jp/VMware-Tools/11.1.0/com.vmware.vsphere.vmwaretools.doc/GUID-C48E1F14-240D-4DD1-8D4C-25B6EBE4BB0F.html)
+- [open-vm-tools install (vmware.com)](https://docs.vmware.com/en/VMware-Tools/11.1.0/com.vmware.vsphere.vmwaretools.doc/GUID-C48E1F14-240D-4DD1-8D4C-25B6EBE4BB0F.html)
 
 
 
