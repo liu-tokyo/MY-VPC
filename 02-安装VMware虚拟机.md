@@ -116,6 +116,32 @@ VMware菜单 【**虚拟机**】 -【 **VMware tools安装**】
 驱动程序会映射到CD-ROM里面，正常打开，点击安装就可以。
 
 
+
+**Windows7 安装注意事项：**
+
+Windows7 SP1 未升级的情况下，因为VMwareTools11之后，采用SHA-2的认证方式，所以会出现安装失败！
+
+VMware 官方的说明如下：
+
+- [VMware Tools upgrade fails on Windows without SHA-2 code signing support (78708)](https://kb.vmware.com/s/article/78708)
+
+  给出的建议是：
+
+  - Start with VMware Tools version 11.0.6.
+  - Upgrade Windows.
+  - Upgrade to the latest VMware Tools version.
+
+  实话说，这种未升级的WIN7，国内用户很难看到，只有微软官方提供的ISO，才有可能出现这种情况，不做详细介绍。
+
+**微软的官方介绍：**
+
+- [2019 SHA-2 Code Signing Support requirement for Windows and WSUS (microsoft.com)](https://support.microsoft.com/en-us/topic/2019-sha-2-code-signing-support-requirement-for-windows-and-wsus-64d1c82d-31ee-c273-3930-69a4cde8e64f)
+
+  **Stand Alone** security updates [KB4474419](https://support.microsoft.com/help/4474419) and [KB4490628](https://support.microsoft.com/help/4490628) released to introduce SHA-2 code sign support.
+
+  下载这2个更新安装之后，再安装VMware Tools的话，就不会再出现问题。
+
+
 ### 3.2 Linux虚拟机
 安装 菜单里面的 **VMWare tools** 即可。
 
