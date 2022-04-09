@@ -14,6 +14,8 @@
     - [3.1 Windows虚拟机](#31-windows虚拟机)
     - [3.2 Linux虚拟机](#32-linux虚拟机)
 
+---
+
 ## 1.Windows环境
 
 ### 1.1 使用 winget 安装
