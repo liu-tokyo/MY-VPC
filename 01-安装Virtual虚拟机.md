@@ -1,6 +1,15 @@
 # 安装Virtual虚拟机
 
+## 目录
 
+- [安装Virtual虚拟机](#安装virtual虚拟机)
+  - [目录](#目录)
+  - [1.Windows下面安装](#1windows下面安装)
+    - [1.1 使用 `winget` 进行安装](#11-使用-winget-进行安装)
+    - [1.2 官方下载安装](#12-官方下载安装)
+  - [2.Linux环境安装](#2linux环境安装)
+
+---
 
 ## 1.Windows下面安装
 
@@ -44,3 +53,6 @@ Downloading https://download.virtualbox.org/virtualbox/6.1.32/VirtualBox-6.1.32-
 ```bash
 sudo apt install org.virtualbox.virtualbox
 ```
+
+当然也可以直接去官网下载，然后用软件安装器安装。
+
