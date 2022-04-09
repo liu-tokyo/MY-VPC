@@ -156,9 +156,28 @@ sudo virt-install --name=deepin-vm --os-variant=Debian10 --vcpu=2 --ram=2048 --g
 
 -name 选项指定虚拟机的名称—— deepin-vm -os-variant 标志表示操作系统系列或虚拟机衍生产品。 由于 Deepin10 是 Debian 的衍生版本，因此我们将 Debian10 指定为变体。
 
-运行命令以获取有关操作系统变体的其他信息：
+或者如下的例子：
 
 ```shell
+virt-install \
+ --name vm001 \
+ --vcpus 2 \
+ --memory 2048 \
+ --cdrom /vmdata/isos/AlmaLinux-8.4-x86_64-dvd.iso \
+ --os-variant almalinux8 \　←ココで「短縮 ID」を指定する
+ --disk path=/vmdata/vm001.qcow2 \
+ --network network=bridge-br0 \
+ --graphics vnc,port=5901,listen=0.0.0.0 \
+ --boot uefi
+```
+
+运行命令以获取有关操作系统对象的其它信息：
+
+```shell
+## 安装 libosinfo-bin 软件包
+sudo apt install libosinfo-bin
+
+## 查询能够支持的 os 名称
 osinfo-query os
 ```
 
@@ -167,7 +186,14 @@ osinfo-query os
 virt-manager 实用程序允许用户使用 GUI 创建虚拟机。 要开始，请转到终端并运行命令。
 
 ```shell
-virt manager
+virt-manager
+```
+
+或者，您可以使用 ssh 远程启动 virt-manager，如以下命令所示：
+
+```shell
+ssh -X host's address
+[remotehost]# virt-manager
 ```
 
 虚拟机管理器窗口如图所示弹出。
@@ -233,6 +259,15 @@ unix/linux一直沿用至今的“一切皆文件”的开发设计理念，为�
 
 尚未找到，但是显示一切正常。可能是开源的 **KVM**，我安装的版本 **Ubuntu 20.04 LTS** 能够自动安装驱动？
 
+但是，安装 Windows10 客户机的话，好像是有问题。驱动安装明显有问题，内存使用量才 1.7GB 左右，堂堂 Windows10 岂是这点儿内存能够跑起来的？分配的是 8GB 内存，但是就是用不起来。
+
+- [virtio-win packages dissection - Repology](https://repology.org/project/virtio-win/information)
+
+  - 当前(2022年4月)，最新驱动版本是 **virtio-win-0.1.215.iso**
+
+    安装驱动之后，虽然操作感觉好了一些，但是感觉还是有一点不太舒服的感觉；远没有安装的 **Ubuntu** 的情况更好。
+
+    也有可能是在 Linux 下面安装的，所以情况不太理想？
 
 
 ## 6. 解除全画面显示
@@ -248,3 +283,5 @@ unix/linux一直沿用至今的“一切皆文件”的开发设计理念，为�
 ## 参照
 
 - [KVM をインストールして設定する - Qiita](https://qiita.com/tkarube/items/7e02d1f9e93d107c616b)
+- [Driver for Windows Server Catalog](https://www.windowsservercatalog.com/results.aspx?text=Red+Hat&bCatID=1282&avc=10&ava=0&OR=5&=Go&chtext=&cstext=&csttext=&chbtext=)
+
