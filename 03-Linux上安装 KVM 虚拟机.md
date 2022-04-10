@@ -279,7 +279,6 @@ unix/linux一直沿用至今的“一切皆文件”的开发设计理念，为�
 
   调正为 12GB 内存之后，发现内存使用量直接跳到了 10GB 左右，剩下的依然是 2GB 左右，主要可能是为了内存交换用？
   
-
 - 下载并安装相应的驱动：[virtio-win packages dissection - Repology](https://repology.org/project/virtio-win/information)
 
   - 当前(2022年4月)，最新驱动版本是 **virtio-win-0.1.215.iso**
@@ -330,7 +329,12 @@ unix/linux一直沿用至今的“一切皆文件”的开发设计理念，为�
 
   1. 关闭kvm虚拟机
   
-  2. 在/etc/libvirt/qemu下找到对应的xml配置文件
+  2. 在 **/etc/libvirt/qemu** 下找到对应的xml配置文件
+  
+     ```shell
+     ## 我个人安装的是 win10 ，所以该文件为 /etc/libvirt/qemu/win10.xml
+     sudo nano /etc/libvirt/qemu/win10.xml
+     ```
   
      在<devices>标签下添加
   
