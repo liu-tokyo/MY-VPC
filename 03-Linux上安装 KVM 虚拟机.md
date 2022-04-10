@@ -2,6 +2,8 @@
 
 测试环境：Ubuntu 20.04
 
+来自于 [Red Hat](https://www.redhat.com/zh/topics/virtualization/what-is-KVM) 的介绍。
+
 ## 目录
 
 - [Linux上安装 KVM 虚拟机](#linux上安装-kvm-虚拟机)
