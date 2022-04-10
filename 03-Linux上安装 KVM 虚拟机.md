@@ -277,6 +277,9 @@ unix/linux一直沿用至今的“一切皆文件”的开发设计理念，为�
 
   调整为 8GB 内存之后，可以发现内存使用量直接跳到了 6GB 左右，至少看更新速度快了很多。
 
+  调正为 12GB 内存之后，发现内存使用量直接跳到了 10GB 左右，剩下的依然是 2GB 左右，主要可能是为了内存交换用？
+  
+
 - 下载并安装相应的驱动：[virtio-win packages dissection - Repology](https://repology.org/project/virtio-win/information)
 
   - 当前(2022年4月)，最新驱动版本是 **virtio-win-0.1.215.iso**
