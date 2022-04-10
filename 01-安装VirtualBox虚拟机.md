@@ -1,8 +1,8 @@
-# 安装Virtual虚拟机
+# 安装 VirtualBox 虚拟机
 
 ## 目录
 
-- [安装Virtual虚拟机](#安装virtual虚拟机)
+- [安装 VirtualBox 虚拟机](#安装-virtualbox-虚拟机)
   - [目录](#目录)
   - [1.Windows下面安装](#1windows下面安装)
     - [1.1 使用 `winget` 进行安装](#11-使用-winget-进行安装)
