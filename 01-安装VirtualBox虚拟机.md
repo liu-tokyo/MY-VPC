@@ -8,6 +8,8 @@
     - [1.1 使用 `winget` 进行安装](#11-使用-winget-进行安装)
     - [1.2 官方下载安装](#12-官方下载安装)
   - [2.Linux环境安装](#2linux环境安装)
+  - [3. 安装客户机驱动](#3-安装客户机驱动)
+  - [4. 退出全屏的快捷键](#4-退出全屏的快捷键)
 
 ---
 
@@ -56,3 +58,16 @@ sudo apt install org.virtualbox.virtualbox
 
 当然也可以直接去官网下载，然后用软件安装器安装。
 
+
+
+## 3. 安装客户机驱动
+
+选在菜单里面的 **VirtualBox Additions** ，如下是官方的使用说明：
+
+- [Chapter 4. Guest Additions (virtualbox.org)](https://www.virtualbox.org/manual/ch04.html)
+
+## 4. 退出全屏的快捷键
+
+- 右边的CTCL +F 全屏或退出全屏
+- 右Ctrl＋A 调整屏幕
+- 右Ctrl+ C 开启/关闭 [Scale](https://so.csdn.net/so/search?q=Scale&spm=1001.2101.3001.7020) Mode（找回菜单栏）
