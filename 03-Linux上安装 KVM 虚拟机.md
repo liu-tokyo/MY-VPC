@@ -336,7 +336,7 @@ unix/linux一直沿用至今的“一切皆文件”的开发设计理念，为�
      sudo nano /etc/libvirt/qemu/win10.xml
      ```
   
-     在<devices>标签下添加
+     在`<devices>`标签下添加
   
      ```xml
      <input type='tablet' bus='usb'/>
