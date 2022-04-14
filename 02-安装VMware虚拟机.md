@@ -148,7 +148,7 @@ VMware 官方的说明如下：
 如果虚拟机上安装的是 Linux，也可以直接运行如下命令，进行驱动安装。
 
 ```bash
-sudo apt-get install open-vm-tools-desktop .
+sudo apt-get install open-vm-tools-desktop
 ```
 
 官方网站说明：
