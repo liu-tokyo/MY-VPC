@@ -33,6 +33,26 @@
        VBoxManage.exe modifyvm %%i --nested-hw-virt on
    )
    ```
+   
+3. 启动客户机
+
+   输入如下指令：
+
+   ```shell
+   egrep -c '(vmx|svm)' /proc/cpuinfo
+   ```
+
+   显示数字大于 0 ，就证明虚拟化技术处于有效状态。
+
+   进入客户机，执行：
+
+   ```shell
+   cat /etc/proc/cpuinfo |grep vmx
+   ```
+
+   已经可以看到vmx flag。
+
+
 
 执行过后，再去设置看看，虚拟技术已经有效了。
 
