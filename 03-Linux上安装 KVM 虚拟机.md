@@ -295,11 +295,37 @@ libvirt支持的网络配置：
 
   - 下载并安装相应的驱动：[virtio-win packages dissection - Repology](https://repology.org/project/virtio-win/information)
 
-    当前(2022年4月)，最新驱动版本是 **virtio-win-0.1.215.iso**
+    当前(2022年4月)，最新驱动版本是 **virtio-win-0.1.217.iso**
 
     安装驱动之后，虽然操作感觉好了一些，但是感觉还是有一点不太舒服的感觉；远没有安装的 **Ubuntu** 的情况流畅。
 
     也有可能是在 Linux 下面安装的，所以情况不太理想？
+  
+  - 红帽子官方信息：
+  
+    - https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html
+  
+      Fedora 基础架构为运行在基于内核的虚拟机 (KVM) 上的 Windows 虚拟机托管 virtIO 驱动程序和其他软件代理。 virtIO 是网络和磁盘设备驱动程序的虚拟化标准。
+  
+      Fedora 不能提供 Windows virtIO 驱动程序，因为它们不能作为 Fedora 构建系统的一部分自动构建：构建 Windows virtIO 驱动程序的唯一方法是在运行 Windows 的机器上。 此外，发布预编译的源代码通常违反 Fedora 政策。 Microsoft 不提供 virtIO 驱动程序，您必须自己下载它们才能使 virtIO 驱动程序可用于在 Fedora 主机上运行的 Windows VM。
+  
+      有关下载驱动程序的详细信息，请参见：https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md
+  
+      我们关注如下2项：
+  
+      - [Latest virtio-win ISO](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win.iso)
+      - [Latest virtio-win-guest-tools.exe](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win-guest-tools.exe)
+  
+      所有 Windows 二进制文件都来自在 Red Hat 内部构建系统上完成的构建，这些构建系统是使用公开可用的代码生成的。 驱动程序使用 Red Hat 的供应商签名进行加密签名。 但是，它们没有使用 Microsoft 的 WHQL 签名进行签名。 [WHQL 签名](https://docs.microsoft.com/en-us/windows-hardware/drivers/install/whql-release-signature)的构建仅适用于付费 RHEL 订阅。
+  
+      驱动程序使用 Red Hat 的供应商签名进行加密签名。 但是，它们没有使用 [Microsoft 的 WHQL](https://docs.microsoft.com/en-us/windows-hardware/drivers/install/kernel-mode-code-signing-policy--windows-vista-and-later-#signing-requirements-by-version) 签名进行签名。
+  
+      警告：由于 Windows 驱动程序签名策略的签名要求，在虚拟机中启用安全启动时，某些版本的 Windows 将不会加载未经 Microsoft 签名的驱动程序。 请参阅错误 [#1844726](https://bugzilla.redhat.com/1844726)。
+  
+    - 没有想到，最新版本的驱动是不好用的：
+  
+      - virtio-win-0.1.217.iso 安装失败；
+      - virtio-win-0.1.215.iso 安装正常。
 
 
 
