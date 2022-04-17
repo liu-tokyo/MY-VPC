@@ -50,6 +50,14 @@ Downloading https://download.virtualbox.org/virtualbox/6.1.32/VirtualBox-6.1.32-
 
 ## 2.Linux环境安装
 
+- Ubuntu下面的安装：
+
+  ```shell
+  sudo apt install virtualbox
+  ```
+
+  无论如何 Ubuntu 是最方便的，就这么一条就能解决问题。
+
 ### 软件包安装
 
 1. 官方网站下载相应的安装包：

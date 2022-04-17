@@ -27,14 +27,14 @@
 
 2. 安装 GParted，一个分区管理软件。
 
-   ```
+   ```shell
    sudo apt update
    sudo apt install gparted
    ```
 
 3. 以 root 权限运行 GParted。
 
-   ```
+   ```shell
    sudo gparted
    ```
 
