@@ -51,30 +51,30 @@ Ubuntu14开始已经自带Hyper-V Integration Service，也就是说在Hyper-V�
 
 目前的解决方法只能是手工指定分辨率，下面是具体步骤。
 
-打开文件 **/etc/default/grub**
+- 打开文件 **/etc/default/grub**
 
-```shell
-sudo nano /etc/default/grub
-```
+  ```shell
+  sudo nano /etc/default/grub
+  ```
 
-找到GRUB_CMDLINE_LINUX_DEFAULT所在行，在最后加上
+- 找到GRUB_CMDLINE_LINUX_DEFAULT所在行，在最后加上
 
-```shell
-video=hyperv_fb:[分辨率]
-```
+  ```shell
+  video=hyperv_fb:[分辨率]
+  ```
 
-比如我想要的分辨率是1600×900，这一行改完后就是
+- 比如我想要的分辨率是1600×900，这一行改完后就是
 
-```shell
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash video=hyperv_fb:1280x720"
-```
+  ```shell
+  GRUB_CMDLINE_LINUX_DEFAULT="quiet splash video=hyperv_fb:1280x720"
+  ```
 
-修改完毕后在Terminal环境里运行 **sudo update-grub**
+- 修改完毕后在Terminal环境里运行 **sudo update-grub**
 
-```shell
-sudo update-grub
-```
+  ```shell
+  sudo update-grub
+  ```
 
 重启机器后，便可以看到Ubuntu运行在新的分辨率下了。
 
-注意：这种方法最高只能支持到1920×1080 的分辨率，如果设置了1920×1200或者更大的分辨率，Ubuntu则会恢复到默认的分辨率。对于大屏幕显示器有高DPI需求的童鞋，可以考虑用RDP，VNC等方式。
+注意：这种方法最高只能支持到1920×1080 的分辨率，如果设置了1920×1200或者更大的分辨率，Ubuntu则会恢复到默认的分辨率。对于大屏幕显示器有高DPI需求的童鞋，可以考虑用RDP，VNC等方式，也只有这样，屏幕分辨率才能变为自由的。
