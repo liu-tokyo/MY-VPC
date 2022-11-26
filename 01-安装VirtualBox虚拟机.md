@@ -60,7 +60,7 @@ VirtualBox 正在积极开发并频繁发布，并且具有不断增长的功能
 
 - Ubuntu下面的安装：
 
-  Ubuntu对普通用户支持最好，所以 **Ubuntu** 是最方便的，如下一条就能解决问题。
+  Ubuntu对普通用户支持最好，所以 **Ubuntu** 是最方便的，如下一条指令就能解决问题：
   
   ```shell
   sudo apt install virtualbox
@@ -73,7 +73,7 @@ VirtualBox 正在积极开发并频繁发布，并且具有不断增长的功能
 
    https://www.virtualbox.org/wiki/Linux_Downloads
 
-2. 用软件安装器安装下载下来的软件包。
+2. 用软件安装器安装下载下来的软件包，不做详细赘述。
 
 ### 2.2 指令安装
 
@@ -140,13 +140,23 @@ VirtualBox 正在积极开发并频繁发布，并且具有不断增长的功能
    ```
 
 
-
-
 ## 3. 安装客户机驱动
 
 选择菜单里面的 **VirtualBox Additions** ，如下是官方的使用说明：
 
 - [Chapter 4. Guest Additions (virtualbox.org)](https://www.virtualbox.org/manual/ch04.html)
+
+需要注意的事项：
+
+- 确保虚拟硬件里面有CD-ROM的项目。
+
+- Windows下面基本可以做到自动安装，在出现提示的时候点击确认就可以了。
+
+- Linux下面无法自动安装，使用终端指令进行安装。
+
+  ```bash
+  sudo bash ./VBoxLinuxAdditions.run
+  ```
 
 ## 4. 退出全屏的快捷键
 
