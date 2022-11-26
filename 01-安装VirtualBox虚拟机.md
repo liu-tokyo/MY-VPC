@@ -11,6 +11,14 @@ VirtualBox 正在积极开发并频繁发布，并且具有不断增长的功能
 对于没有经历VMware的选手，**强烈推荐使用VirtualBox**，不仅仅是免费的、个头小（少浪费硬盘空间）、并且感觉运行速度会快一点儿，我们能用的所用功能方面也没有差什么。  
 我个人安装这个虚拟机软件的原因是，Debian在VMware下无法正确运行，据说是VMwareTools驱动对Debian支持不好，费尽心力，一直无法解决，所以所有Debian虚拟机就在VirtualBox下面安装，不但稳定，还明确感觉速度的改变，虽然可能是个人心理的问题。
 
+- 最新版本已经更新到了 `VirtualBox 7.0.4 platform packages` 。
+
+  画面最大化之后的控制条，也移转到了顶部中央，操作更加方便。曾经从6.1.3版本，该控制条被防止在画面下部中央，操作起来总觉得不是那么方便。
+
+- 如果需要针对最新设备进行支持，需要安装 `VirtualBox 7.0.4 Oracle VM VirtualBox Extension Pack` 。
+
+  否则无法把 U盘 从Host主机 转到 虚拟机。
+
 ## 1.Windows下面安装
 
 ### 1.1 使用 `winget` 进行安装
@@ -136,7 +144,7 @@ VirtualBox 正在积极开发并频繁发布，并且具有不断增长的功能
 
 ## 3. 安装客户机驱动
 
-选在菜单里面的 **VirtualBox Additions** ，如下是官方的使用说明：
+选择菜单里面的 **VirtualBox Additions** ，如下是官方的使用说明：
 
 - [Chapter 4. Guest Additions (virtualbox.org)](https://www.virtualbox.org/manual/ch04.html)
 
