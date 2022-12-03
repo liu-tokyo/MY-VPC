@@ -1,6 +1,6 @@
 # VirtualBox的硬盘扩容
 
-
+> [仮想化環境のディスク容量を拡張する - Avintonジャパン株式会社](https://avinton.com/academy/extending-virtualbox-virtual-drive/)
 
 ## 作业环境
 
