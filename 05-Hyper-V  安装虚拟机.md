@@ -8,7 +8,7 @@
 
 3、最后，就可以启动虚拟机进行正常安装了。
 
-如有不清除的地方，请查阅微软的官方文档：
+如有不清楚的地方，请查阅微软的官方文档：
 
 - https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
 
