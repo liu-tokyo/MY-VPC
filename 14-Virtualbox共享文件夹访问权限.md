@@ -1,4 +1,4 @@
-# 解决virtualbox共享文件夹没有访问权限的问题
+# 解决virtualbox共享文件夹访问权限
 Virtualbox是一款免费试用的虚拟机软件。基本功能完全可替代需要购买或crack的VMware。
 
 在Windows主机上用Virtualbox搭建Linux虚拟机，虚拟机和主机之间传递文件最方便的方法就是共享文件夹。

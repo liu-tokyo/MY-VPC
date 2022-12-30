@@ -282,3 +282,29 @@ VMware的安装文件被下载到了“下载”目录中，在该下载文件�
 
 - 后续操作需要重新设置虚拟机，将原来的硬盘文件替换掉即可。
 
+
+
+## 6. 设置共享权限
+
+**Linux** 环境，设置宿主机的文件夹共享之后，需要设置权限。
+
+- 临时权限设置
+
+  ```
+  sudo /usr/bin/vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other -o uid=1000 -o gid=1000 -o umask=022
+  ```
+
+- 启动有效设置
+
+  ```
+  sudo nano /etc/fstab
+  ```
+
+  在文件结尾添加如下 1 行数据：
+
+  ```
+  .host:/ /mnt/hgfs fuse.vmhgfs-fuse allow_other,uid=1000,gid=1000,umask=022 0 0
+  ```
+
+注意：`uid=1000` 的数值，请在 **主目录** 内用终端执行 `id` 查询，理论上一般都是 `1000`  。
+
