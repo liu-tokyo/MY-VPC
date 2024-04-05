@@ -99,8 +99,8 @@ Workstation 16 Pro 基于行业定义的技术，在以下方面实现了改进�
 
 VMware的安装文件被下载到了“下载”目录中，在该下载文件的目录中启动终端，针对下载的文件，按照如下步骤进行安装：
 
-1. VMWare Player 在内部使用内核模块 vmmon.ko 和 vmnet.ko，这将在后面的步骤中涉及。  
-   由于vmmon.ko和vmnet.ko需要在VMWare Player安装环境中编译，所以在安装VMWare Player前需要提前安装构建工具。
+1. `VMWare Player` 在内部使用内核模块 `vmmon.ko` 和 `vmnet.ko`，这将在后面的步骤中涉及。  
+   由于`vmmon.ko`和`vmnet.ko`需要在`VMWare Player`安装环境中编译，所以在安装`VMWare Player`前需要提前安装构建工具。
 
    ```bash
    sudo apt install build-essential
@@ -310,7 +310,7 @@ VMware的安装文件被下载到了“下载”目录中，在该下载文件�
 
 ## 7. 进入BIOS画面
 
-由于点击f2进入bios的画面时间太短，很多时候用户来不及按下f2，就导致了无法进入bios。
+由于点击`f2`进入`bios`的画面时间太短，很多时候用户来不及按下`f2`，就导致了无法进入`bios`。
 
 - **单次方法（下次使用需再次相同操作），开机自动进入bios。**
 
@@ -328,4 +328,4 @@ VMware的安装文件被下载到了“下载”目录中，在该下载文件�
   bios.bootdelay = "5000"
   ```
 
-其实，启动按钮可以选择 强制进入 BIOS 画面的选项。笑
+其实，启动按钮可以选择 强制进入 `BIOS` 画面的选项（菜单→虚拟机→电源→启动进入BIOS）。

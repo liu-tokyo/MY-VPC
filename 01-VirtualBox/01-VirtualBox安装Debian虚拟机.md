@@ -22,7 +22,7 @@
 
 3. 修改文件内容：
 
-   找到“root ALL=(ALL:ALL) ALL”一行，在下面插入新的一行，内容是“lizh ALL=(ALL:ALL) ALL”，然后在vim键入命令“:wq!”保存并退出。
+   找到 `root ALL=(ALL:ALL) ALL` 一行，在下面插入新的一行，内容是 `lizh ALL=(ALL:ALL) ALL`，然后在vim键入命令 `:wq!` 保存并退出。
 
    *注：这个文件是只读的，不加“!”保存会失败。*
 
