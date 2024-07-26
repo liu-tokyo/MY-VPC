@@ -1,13 +1,16 @@
 # VirtualBox虚拟机如何选中启用嵌套 VT-x/AMD-V
 
-　使用VirtualBox，总希望性能更好一些。于是吾就想启用各种指令。比如说“启用嵌套 VT-x/AMD-V”：
+使用VirtualBox，总希望性能更好一些。于是吾就想启用各种指令。比如说“启用嵌套 VT-x/AMD-V”：
 
 - 公司换了新机（CPU是10代i5）之后，可以选中了。
 - 而家里的机器（CPU是8代i5），却一直无法选中。
+- 启用嵌套之后，在虚拟客户机上可以继续模拟运行其它虚拟机软件。
 
-为什么无法选中？查了一下，我的CPU是支持VT-x的。于是就找了一下，如何启用这个指令：
+为什么无法选中？查了一下，我的CPU是支持 VT-x 的。于是就找了一下，如何启用这个指令：
 
-1. 单个处理
+## 1. 单个处理方式
+
+- 处理指令如下
 
    ```shell
    C:
@@ -23,7 +26,9 @@
    VBoxManage.exe modifyvm "Windows7-develop" --nested-hw-virt on
    ```
 
-2. 批处理
+## 2. 批处理方式
+
+- 批处理指令如下
 
    ```shell
    cd /d "c:\Program Files\Oracle\VirtualBox"
@@ -33,8 +38,10 @@
        VBoxManage.exe modifyvm %%i --nested-hw-virt on
    )
    ```
-   
-3. 启动客户机
+
+## 3. 启动客户机方式
+
+- 启动客户机
 
    输入如下指令：
 
