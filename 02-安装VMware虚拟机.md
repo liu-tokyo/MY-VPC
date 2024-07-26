@@ -343,3 +343,47 @@ VMware的安装文件被下载到了“下载”目录中，在该下载文件�
   ```
 
 其实，启动按钮可以选择 强制进入 `BIOS` 画面的选项（菜单→虚拟机→电源→启动进入BIOS）。
+
+# VMware 内部命令
+
+## 1. 使用 vctl 命令
+
+在宿主机上，可以通过 vctl 命令来管理容器和运行 Kubernetes 集群
+
+- 官方网址
+
+  https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-78E7339F-7294-4F3E-9AD0-1E14C201FA40.html
+
+## 2. 使用 vmrun 命令
+
+在宿主机上，可以通过 vmrun 命令来控制虚拟机。
+
+- 官方资料
+
+  https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-A28FA25B-5529-4D95-9F7B-4CFBB8DF2AA7.html
+
+- 命令示例
+
+  https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-FF306A59-080E-497E-857D-F45125927FB3.html
+
+## 3. 使用 vmware 命令
+
+在宿主机上，可以通过 vmware 命令来控制虚拟机。例如开机、关机等，也可以把该命令加入宿主机的启动选项，实现和宿主机开机后同时启动。
+
+- 官方资料
+
+  https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-AE43508D-A717-485D-B991-2CB9136E54D7.html
+
+- 命令选项
+
+  https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-7369457F-FE1D-40FE-97B6-B29CA4916CCD.html
+
+## 4. 使用 REST API
+
+利用 VMware Workstation Pro REST API，您可以通过编程方式与核心 VMware 管理程序和虚拟机进行交互。
+
+- 官方资料
+
+  https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-9FAAA4DD-1320-450D-B684-2845B311640F.html
+
+可以使用 Workstation Pro REST API 服务对加密虚拟机执行以下操作：打开电源、关闭电源、挂起、暂停、取消暂停或检索状态。
