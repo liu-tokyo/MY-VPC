@@ -8,7 +8,7 @@
 
 
 
-## 检查是否支持KVM
+## 1. 检查是否支持KVM
 
 1. 硬件支持
 
@@ -48,7 +48,7 @@
    如果运行后没有显示，那么需要手动加载这些模块。
    
 
-## 准虚拟化(使用VIRTIO)
+## 2. 准虚拟化(使用VIRTIO)
 
 准虚拟化为客户机提供了一种使用主机上设备的快速有效的通信方式。KVM使用Virtio API作为虚拟机管理程序和客户机之间的连接层，为虚拟机提供准虚拟化设备（亦称Virtio设备）。 所有Virtio设备都包括两部分：主机设备和客户机驱动程序。
 1. 内核支持
@@ -78,13 +78,13 @@
 
 
 
-## 如何使用KVM
+## 3. 如何使用KVM
 
 请参考[QEMU](https://wiki.archlinux.org/title/QEMU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))条目。
 小贴士与小技巧
 注意： 请参考[QEMU#Tips and tricks](https://wiki.archlinux.org/title/QEMU#Tips_and_tricks)和[QEMU#Troubleshooting](https://wiki.archlinux.org/title/QEMU#Troubleshooting)词条获取更多相关技巧。
 
-### 嵌套虚拟化
+## 4. 嵌套虚拟化
 
 1. 在宿主机启用 **kvm_intel** 模块的嵌套虚拟化功能：
 

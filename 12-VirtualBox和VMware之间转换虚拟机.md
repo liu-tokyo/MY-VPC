@@ -6,7 +6,7 @@ VirtualBox 和 VMware 使用不同的虚拟机格式，但都支持标准的开�
 
 不幸的是，这可能并不总是完美的，因为 VirtualBox 和 VMware 似乎都使用了稍微不同的 OVA/OVF 实现，它们并不完全兼容。 如果这不起作用，您可能需要从头开始重新安装虚拟机的客户操作系统。
 
-## VirtualBox 到 VMware
+## 1. VirtualBox 到 VMware
 
 1. 在将虚拟机从 VirtualBox 迁移到 VMware 之前，请确保它在 VirtualBox 中已“关闭”——而不是挂起。 如果它已暂停，请启动虚拟机并将其关闭。
 2. 单击 VirtualBox 中的文件菜单，然后选择导出设备。
@@ -16,7 +16,7 @@ VirtualBox 和 VMware 使用不同的虚拟机格式，但都支持标准的开�
 6. VirtualBox 和 VMware 并不完全兼容，因此您可能会收到一条警告消息，指出文件“未通过 OVF 规范性能”——但如果您单击重试，虚拟机应该会导入并正常运行。
 7. 该过程完成后，您可以在 VMware 中启动虚拟机，从虚拟机内部的控制面板中卸载 VirtualBox Guest Additions，然后从虚拟机的菜单中安装 VMware Tools。
 
-## VMware 到 VirtualBox
+## 2. VMware 到 VirtualBox
 
 1. 在将虚拟机从 VMware 迁移到 VirtualBox 之前，请确保它在 VMware 中已“关闭”——而不是挂起。 如果它已暂停，请启动虚拟机并将其关闭。
 
