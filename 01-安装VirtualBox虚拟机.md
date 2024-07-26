@@ -19,6 +19,8 @@ VirtualBox 正在积极开发并频繁发布，并且具有不断增长的功能
 
   否则无法把 U盘 从Host主机 转到 虚拟机。
 
+> VirtualBox 客户机中的字体显示，明显没有 VMWare 中的清晰。
+
 ## 1. Windows下面安装
 
 ### 1.1 使用 `winget` 进行安装

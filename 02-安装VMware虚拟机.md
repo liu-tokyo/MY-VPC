@@ -6,6 +6,8 @@ VMware Workstation Pro 是业界标准的桌面 Hypervisor，用于在 Linux 或
 
 Workstation 16 Pro 基于行业定义的技术，在以下方面实现了改进：DirectX 11 和 OpenGL 4.1 3D 加速图形支持、全新的“暗黑模式”用户界面、在 Windows 10 版本 2004 和更高版本的主机上对 Windows Hyper-V 模式的支持、一个用于支持容器和 Kubernetes 集群的新 CLI“vctl”，以及对最新 Windows 和 Linux 操作系统的支持等。
 
+> 旧版本的 DEBIAN 在 VMware 上安装的话，容易导致虚拟机崩溃。但是使用新版 12.6 已经不再存在问题。
+
 ## 1.Windows环境
 
 ### 1.1 使用 winget 安装
