@@ -61,41 +61,29 @@ Workstation 16 Pro 基于行业定义的技术，在以下方面实现了改进�
   正在启动程序包安装...
   已成功安装
   ```
-  
-  
 
 ### 1.2 官方下载安装
 
 直接到官方网站下载安装，
 
-- 官方下载网址：
-
-  [VMware Workstation Pro Download](https://www.vmware.com/jp/products/workstation-pro/workstation-pro-evaluation.html)
-
+- 官方下载网址：  
+  [VMware Workstation Pro Download](https://www.vmware.com/jp/products/workstation-pro/workstation-pro-evaluation.html)  
   正常点击安装即可，不做详细介绍。
-
-
 
 ## 2.Linux环境
 
 ### 2.1 官方下载安装
 
-- 官方下载网址：
-
-  最新版本：
-
-  [VMware Workstation Pro Download](https://www.vmware.com/jp/products/workstation-pro/workstation-pro-evaluation.html)
-
-  任意版本（需要注册用户才能下载）：
-
+- 官方下载网址：  
+  最新版本：  
+  [VMware Workstation Pro Download](https://www.vmware.com/jp/products/workstation-pro/workstation-pro-evaluation.html)  
+  任意版本（需要注册用户才能下载）：  
   https://customerconnect.vmware.com/en/downloads/info/slug/desktop_end_user_computing/vmware_workstation_pro/16_0
 
 - 下载文件名称：  
   类似如下文件，不同时期下载的最新版本可能有所不同：  
   VMware-Workstation-Full-16.2.3-19376536.x86_64.bundle  
   VMware-Workstation-Full-16.2.4-20089737.x86_64.bundle
-
-
 
 ### 2.2 使用指令安装
 
@@ -143,10 +131,8 @@ VMware的安装文件被下载到了“下载”目录中，在该下载文件�
   liu@liu-virtual-machine:~/下载$ 
   ```
 
-- 存在问题：
-
-  Linux版的`16.2.4` 安装之后，居然大部分是英文状态，相信大部分人也不会在Linux上用虚拟机，所以不做详细介绍。
-
+- 存在问题：  
+  Linux版的`16.2.4` 安装之后，居然大部分是英文状态，相信大部分人也不会在Linux上用虚拟机，所以不做详细介绍。  
   Windows版的`16.2.3`安装结束，是完全的中文菜单。可能`16.2.4` 属于当前最新版本，对语言的支持还不是那么彻底？
 
 ## 3.安装驱动
@@ -162,12 +148,9 @@ VMware的安装文件被下载到了“下载”目录中，在该下载文件�
   - VMware 官方的说明如下：  
     [VMware Tools upgrade fails on Windows without SHA-2 code signing support (78708)](https://kb.vmware.com/s/article/78708)
 
-  - 给出的建议是：
-
-    Start with VMware Tools version 11.0.6.
-
-    Upgrade Windows.
-
+  - 给出的建议是：  
+    Start with VMware Tools version 11.0.6.  
+    Upgrade Windows.  
     Upgrade to the latest VMware Tools version.
 
   实话说，这种未升级的WIN7，国内用户很难看到，只有微软官方提供的ISO，才有可能出现这种情况，不做详细介绍。
@@ -192,14 +175,10 @@ VMware的安装文件被下载到了“下载”目录中，在该下载文件�
   ```
 
 - 官方网站说明：
-
   [open-vm-tools install (vmware.com)](https://docs.vmware.com/en/VMware-Tools/11.1.0/com.vmware.vsphere.vmwaretools.doc/GUID-C48E1F14-240D-4DD1-8D4C-25B6EBE4BB0F.html)
 
-- 也可以参照如下网站进行安装
-
+- 也可以参照如下网站进行安装  
   [VMware16的安装及VMware配置Linux虚拟机(详解版)](https://blog.csdn.net/m0_50519965/article/details/116175873?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522164892122916782184660652%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=164892122916782184660652&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-116175873.142^v5^pc_search_insert_es_download,157^v4^control&utm_term=VMware&spm=1018.2226.3001.4187)
-
-
 
 ## 4. VMware虚拟机快照
 
@@ -213,8 +192,7 @@ VMware的安装文件被下载到了“下载”目录中，在该下载文件�
 
 ### 4.2 快照的操作
 
-- **VMware的工具条**
-
+- **VMware的工具条**  
   ![image-20220821050657508](images/image-20220821050657508.png)
 
   3个图标的含义：
@@ -326,16 +304,14 @@ VMware的安装文件被下载到了“下载”目录中，在该下载文件�
 
 由于点击`f2`进入`bios`的画面时间太短，很多时候用户来不及按下`f2`，就导致了无法进入`bios`。
 
-- **单次方法（下次使用需再次相同操作），开机自动进入bios。**
-
+- **单次方法（下次使用需再次相同操作），开机自动进入bios。**  
   关闭虚拟机，找到虚拟机系统的存放目录（注：不是虚拟机这个软件的安装目录），然后进入到相应系统的文件夹。找到 .vmx 文件，在最后加入一行：
 
   ```
   bios.forcesetuponce = "true"
   ```
 
-- **多次或经常进入bios的方法，延长启动画面时间。**
-
+- **多次或经常进入bios的方法，延长启动画面时间。**  
   关闭虚拟机，找到虚拟机系统的存放目录（注：不是虚拟机这个软件的安装目录），然后进入到相应系统的文件夹。找到 .vmx 文件，在最后加入一行：
 
   ```
@@ -355,40 +331,34 @@ VMware的安装文件被下载到了“下载”目录中，在该下载文件�
 
 在宿主机上，可以通过 vctl 命令来管理容器和运行 Kubernetes 集群
 
-- 官方网址
-
-  https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-78E7339F-7294-4F3E-9AD0-1E14C201FA40.html
+- 官方网址  
+https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-78E7339F-7294-4F3E-9AD0-1E14C201FA40.html
 
 ## 2. 使用 vmrun 命令
 
 在宿主机上，可以通过 vmrun 命令来控制虚拟机。
 
-- 官方资料
-
+- 官方资料  
   https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-A28FA25B-5529-4D95-9F7B-4CFBB8DF2AA7.html
-
-- 命令示例
-
-  https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-FF306A59-080E-497E-857D-F45125927FB3.html
+  
+- 命令示例  
+https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-FF306A59-080E-497E-857D-F45125927FB3.html
 
 ## 3. 使用 vmware 命令
 
 在宿主机上，可以通过 vmware 命令来控制虚拟机。例如开机、关机等，也可以把该命令加入宿主机的启动选项，实现和宿主机开机后同时启动。
 
-- 官方资料
-
+- 官方资料  
   https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-AE43508D-A717-485D-B991-2CB9136E54D7.html
-
-- 命令选项
-
-  https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-7369457F-FE1D-40FE-97B6-B29CA4916CCD.html
+  
+- 命令选项  
+https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-7369457F-FE1D-40FE-97B6-B29CA4916CCD.html
 
 ## 4. 使用 REST API
 
 利用 VMware Workstation Pro REST API，您可以通过编程方式与核心 VMware 管理程序和虚拟机进行交互。
 
-- 官方资料
-
-  https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-9FAAA4DD-1320-450D-B684-2845B311640F.html
+- 官方资料  
+https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-9FAAA4DD-1320-450D-B684-2845B311640F.html
 
 可以使用 Workstation Pro REST API 服务对加密虚拟机执行以下操作：打开电源、关闭电源、挂起、暂停、取消暂停或检索状态。
