@@ -325,6 +325,33 @@ VMware的安装文件被下载到了“下载”目录中，在该下载文件�
 尤其是在移动硬盘上运行虚拟机，因为各种情况，导致虚拟机无法关闭的情况。  
 在 任务管理器 的 进程 页，找到 `VMWare WorkStation VMX` 的进程，关闭该进程即可。关闭之后，需要重新启动 `VMWare WorkStation Pro` 即可重新启动，正常运行。
 
+## 9. caches 子文件夹
+
+> 参考：https://www.cnblogs.com/Tty725/archive/2010/08/31/1813726.html
+
+ VMware Workstation 7.1 开始，虚拟主机文件目录下的 caches 子文件夹！
+
+默认的 VMware Workstation 7.1 配置下，在每一个的虚拟主机的磁盘文件下有一个  caches 子文件夹。
+
+有以下二个子文件下也有很多的文件：
+
+-  `caches\GuestAppsCache\appData`
+- `caches\GuestAppsCache\launchMenu`
+
+因为默认 `VM Ws 7.1` 是开启了 Unity 模式的原因，也叫无缝模式，在VPC XP Mode中也有此显示模式（题外插一个，VirtualBox也有一分支产品：`VMLite XP Mode`）。这个Unity 模式有一能力，能把虚拟机中应用程序窗口，放到物理主机中来显示。
+
+如果你十分讨厌 caches 子文件夹，也不需要使用这个功能，可以使用以下方法来关闭并手动删除 caches 子文件夹：
+
+VM Ws 的所有主机：
+
+编辑 `%AllUsersProfile%\VMware\VMware Workstation\config.ini` 文件(Linux是`/etc/vmware/config`)，更改以下值，没有就添加：
+
+```
+isolation.tools.unity.disable = “true”
+```
+
+
+
 # VMware 内部命令
 
 ## 1. 使用 vctl 命令
