@@ -325,7 +325,25 @@ VMware的安装文件被下载到了“下载”目录中，在该下载文件�
 尤其是在移动硬盘上运行虚拟机，因为各种情况，导致虚拟机无法关闭的情况。  
 在 任务管理器 的 进程 页，找到 `VMWare WorkStation VMX` 的进程，关闭该进程即可。关闭之后，需要重新启动 `VMWare WorkStation Pro` 即可重新启动，正常运行。
 
-## 9. caches 子文件夹
+## 9. VM相关文件
+
+| 文件类型                  | 说明                               | 备注                                                         |
+| ------------------------- | ---------------------------------- | ------------------------------------------------------------ |
+| Vmmcores.gz               | 监视器崩溃时创建的监视器核心文件， | 它们通常表示虚拟化引擎存在问题；对于诊断显示器首先崩溃的原因非常宝贵。<br />*※ 如果需要空间，可以删除它们。* |
+| Vmem                      | 内存虚拟文件                       | 相当于Windows的pagefile.sys文件（虚拟文件）=虚拟机使用使用的内存的文件；<br />虚拟机开机时自动创建，当虚拟机关机时 vmem文件就会消失不占用空间。<br />如果一定要禁止生成vmem文件，可以这么操作：<br />在虚拟文件夹中找到*.vmx文件，用记事本打开，然后在文件最后加入一行 `mainMem.useNamedFile = "FALSE"`, 重新启动虚拟机，虚拟内存文件就没有了。 |
+| Vmsn                      | 快照状态文件                       | VMware虚拟化软件VMware快照状态文件<br />保存关于要用于快照的虚拟机或虚拟机的保存和冷冻状态的信息。<br />当虚拟机建立快照时，就会自动创建该文件。有几个快照就会有几个此类文件。 |
+| Vmx                       | 虚拟机的配置文件                   | 该文件为虚拟机的配置文件，包含虚拟机所有虚拟硬件的信息和设置，如电源、网络、内存等或虚拟机编辑器对虚拟机进行的所有配置。<br />有时需要手动更改配置文件以达到对虚拟机硬件方面的更改,虚拟机导入使用的文件。 |
+| vmdk                      | 虚拟磁盘文件                       | 一个虚拟磁盘有一个或多个虚拟磁盘文件构成，简单说就是你的所有文件都在里面，谨慎删除。 |
+| Nvram                     | VMware虚拟机非异变RAM              | 存放虚拟机的BIOS信息,简单说就是虚拟机启动时的信息。          |
+| Vmsd                      | 快照数据                           | 简单的包含快照的元数据                                       |
+| Vswp                      | 虚拟机文件的交换页面               | 在启动虚拟机时，如果主机由于过量使用而消耗光其物理内存时，会创建一个内存交换文件代替物理主机内存。 |
+| Scoreboard                | 统计信息文件                       | 由VMX进程生成的某种统计信息文件。可以通过将其添加到客户机 VMX 文件来禁用它：`vmx.scoreboard.enabled = "FALSE"`<br />※ VMware现在正在与VirtualBox和其他公司竞争并维护自己的记分牌 |
+| Vmxf                      | 辅助配置文件                       | 全称为VMware team member，VMware组成员。该文件为虚拟机组team中的虚拟机的辅助配置文件。<br />*※ 一般无需改动* |
+| DMP                       | 错误转储文件                       | DMP是windows系统中的错误转储文件，就是把说有的错误数据装到一个文件中方便分析故障原因，虚拟机中也有。 |
+| Lck<br />文件夹           | 锁定文件                           | 虚拟机在运行时会创建相应的文件，即在虚拟机的安装目录下自动产生.lck锁定文件文件，这是虚拟机的虚拟磁盘 (.vmdk)自带的磁盘保护机制，防止多台虚拟机同时访问同一个虚拟磁盘造成对磁盘修改、数据丢失以及性能的削减<br />Windows系统上如果在桌面一使用XX虚拟机,然后在桌面二又打开了新的虚拟机窗口并且启用桌面XX的虚拟机,就会出发磁盘保护机制,也就是虚拟机启动失败的原因之一<br />*※ 特殊情况虚拟机开机无法开机可清除这个文件夹* |
+| Vmware-SYSTEM<br />文件夹 | VMware临时文件                     | 使用VMwareTools从虚拟机中拷贝(复制)到电脑的文件临时存放目录<br />*※ 没什么用处直接删除即可* |
+
+### 9.1 caches 子文件夹
 
 > 参考：https://www.cnblogs.com/Tty725/archive/2010/08/31/1813726.html
 
@@ -342,15 +360,32 @@ VMware的安装文件被下载到了“下载”目录中，在该下载文件�
 
 如果你十分讨厌 caches 子文件夹，也不需要使用这个功能，可以使用以下方法来关闭并手动删除 caches 子文件夹：
 
-VM Ws 的所有主机：
+#### (a) 针对 VM Ws 所有主机
 
-编辑 `%AllUsersProfile%\VMware\VMware Workstation\config.ini` 文件(Linux是`/etc/vmware/config`)，更改以下值，没有就添加：
+- 编辑 `%AllUsersProfile%\VMware\VMware Workstation\config.ini` 文件(Linux是`/etc/vmware/config`)，更改以下值（没有就添加）：
 
-```
-isolation.tools.unity.disable = “true”
-```
+  ```ini
+  isolation.tools.unity.disable = "true"
+  ```
 
+#### (b) 指定 VM Ws 虚拟机
 
+- 编辑指定 VM Ws 虚拟机的 .VMX 文件，更改以下值，没有就添加：  
+
+  ```ini
+  unity.enableLaunchMenu = "FALSE"
+  unity.showBadges = "FALSE"
+  unity.showBorders = "FALSE"
+  unity.wasCapable = "FALSE"
+  ```
+
+### 9.1 删除dump类文件
+
+vmware生成的dump删除方法如下：
+
+1. 右键点击此电脑，然后选择属性；
+2. 打开后点击高级系统设置；
+3. 选择启动和故障回复—设置取消将时间写入系统日志，确定保存就可以了，以后就不会生成DMP文件。 
 
 # VMware 内部命令
 
@@ -389,3 +424,30 @@ https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUI
 https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-9FAAA4DD-1320-450D-B684-2845B311640F.html
 
 可以使用 Workstation Pro REST API 服务对加密虚拟机执行以下操作：打开电源、关闭电源、挂起、暂停、取消暂停或检索状态。
+
+# VMware 疑难解决
+
+## 1. WindowsXP 上的 PCI 硬件错误
+
+偶尔在 WindowsXP 系统上出现 PCI硬件错误，硬件ID为 `PCI\VEN_15AD&DEV_07E0&SUBSYS_07E015AD&REV_00`。
+
+- 查询该硬件的信息  
+
+  ```
+       Name: Standard SATA AHCI Controller
+  Device ID: PCI\VEN_15AD&DEV_07E0&SUBSYS_07E015AD&REV_00\4&3AD87E0A&0&0888
+     Driver: C:\Windows\system32\DRIVERS\storahci.sys, 6.03.9600.16384 (English), 8/22/2013 08:43:31, 107872 bytes
+  ```
+
+  显示的是 SATA 驱动错误，原因是：Windows XP 检测到一个不存在的 SATA 驱动器，并且没有要安装的 VM 驱动程序。
+
+  而、我的 XP虚拟机 采用的硬盘接口 IDE，根本没有用到 SATA 接口。
+
+- 启动时不再出现新硬件的烦恼  
+  编辑 虚拟机 的配置设置（扩展名为 `vmx` 的主启动文件），找到如下内容：  
+
+  ```
+  sata0:0.present = "FALSE"
+  ```
+
+  该设置应该是被错误设置为 `TRUE`，修改为 `FALSE` 后，重新启动，就不会出现发现新硬件的烦恼了。
