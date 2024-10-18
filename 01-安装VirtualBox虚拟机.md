@@ -52,8 +52,7 @@ VirtualBox 正在积极开发并频繁发布，并且具有不断增长的功能
 
 ### 1.2 官方下载安装
 
-- 官方网址：
-
+- 官方网址：  
   https://www.virtualbox.org/
 
 ## 2. Linux环境安装
@@ -69,18 +68,16 @@ VirtualBox 正在积极开发并频繁发布，并且具有不断增长的功能
 
 ### 2.1 软件包安装
 
-1. 官方网站下载相应的安装包：
-
+1. 官方网站下载相应的安装包：  
    https://www.virtualbox.org/wiki/Linux_Downloads
-
+   
 2. 用软件安装器安装下载下来的软件包，不做详细赘述。
 
 ### 2.2 指令安装
 
-1. 参阅官方网站介绍：
-
+1. 参阅官方网站介绍：  
    https://www.virtualbox.org/wiki/Downloads
-
+   
 2. 将以下行添加到您的 /etc/apt/sources.list。根据您的分配，将 '<mydist>' 替换为 'eoan'、'bionic'、'xenial'、'buster'、'stretch' 或 'jessie '（旧版本的 VirtualBox 支持不同的发行版）：
 
    ```shell
@@ -198,7 +195,7 @@ VirtualBox 没有 是 EFI 启动，没有进入 BIOS 的选项；但是，可以
 ## 8. 安装增强功能之前的操作
 
 - 执行如下指令：
-
+  
   ```bash
   sudo apt-get update
   sudo apt-get upgrade
