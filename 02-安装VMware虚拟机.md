@@ -451,3 +451,79 @@ https://docs.vmware.com/cn/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUI
   ```
 
   该设置应该是被错误设置为 `TRUE`，修改为 `FALSE` 后，重新启动，就不会出现发现新硬件的烦恼了。
+
+# Ubuntu24.04
+
+## 1. 数据共享
+
+新版本的 Ubuntu 和 VMWare 之间存在问题，数据共享存在问题。
+
+### 1.1 问题确认：
+
+1. 确认数据共享设置：
+
+   ```bash
+   vmware-hgfsclient
+   ```
+
+2. 创建共享挂载点：
+
+   ```bash
+   sudo mkdir /mnt/hgfs
+   ```
+
+3. 尝试挂在：
+
+   ```bash
+   sudo mount -t fuse.vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other
+   ```
+
+   /mnt/hgfs/ 是挂载点，我们也可以修改为其它挂载点；  
+   -o allow_other 表示普通用户也能访问共享目录。  
+   然后，输入如下命令再次进入 /mnt/hgfs 查看 （注意：挂载后必须要再次进入/mnt/hgfs才能查看到共享的文件夹）
+
+   ```bash
+   cd /mnt/hgfs
+   ll
+   ```
+
+### 1.2 设置启动时自动挂载
+
+1. 编辑开机启动脚本
+
+   ```bash
+   sudo nano /etc/rc.local
+   ```
+
+2. 在文件的末尾添加以下行，确保替换为你的共享文件夹路径和名称：
+
+   ```bash
+   #!/bin/sh -e
+   /usr/bin/vmhgfs-fuse .host:/ /mnt/hgfs -o subtype=vmhgfs-fuse,allow_other
+   ```
+
+   如果只想共享摸一个共享目录，可以如下设置：
+
+   ```bash
+   /usr/bin/vmhgfs-fuse .host:/data /mnt/hgfs -o subtype=vmhgfs-fuse,allow_other
+   ```
+
+3. 然后保存并关闭文件。为脚本添加执行权限：
+
+   ```bash
+   sudo chmod +x /etc/rc.local
+   ```
+
+   虽然赋予了 执行权限，但是总是不成功，发现还是赋予 全部权限 比较简单：
+
+   ```bash
+   sudo chmod 777 /etc/rc.local
+   ```
+
+4. 查看权限
+
+   ```bash
+   ls -ld /etc/rc.local
+   ```
+
+如上设置之后，重新启动，也能保证数据共享没有问题。
